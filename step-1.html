@@ -37,7 +37,6 @@
         width: 100%;
         z-index:2;
         position: relative;
-        margin-bottom: -20px;
       }
 
       header {
@@ -135,13 +134,26 @@
         color: var(--hover-color);
         }
 
-      .image {
-          margin: -5px auto;
+        .image {
           display: flex;
+          flex-direction: row;
           justify-content: center;
-          z-index: 1;
-          width:100%;
-          align-content: center;
+          gap: 70px;
+          margin:0 auto;
+        }
+
+        .image figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        }
+
+        .image figcaption {
+        font-size: 20px;
+        color: var(--black-text-color);
+        margin-top: 10px;
+        font-family: var(--font-family);
         }
 
       #secondary-nav { 
@@ -197,10 +209,10 @@
         flex-direction: row;
         margin: 0 auto;
         font-size: 20px;
-        width: 50%;
+        width: 45%;
         color: var(--black-text-color);
         font-size: 30px;
-        padding: 60px;
+        padding: 40px;
         margin: 0 auto;
       }
      
@@ -407,9 +419,14 @@
         </div>
       
       <div class="image">
-        <img src="images/finding-1.webp" alt="1">
-        <img src="images/finding-2.webp" alt="2" >
-        <!-- <figcaption>Univ. of MI Arb Peony</figcaption> -->
+        <figure>
+          <img src="images/finding-2.webp" alt="2" >
+          <figcaption>Greenwood Furnace</figcaption>
+        </figure>
+          <figure>
+          <img src="images/finding-1.webp" alt="1">
+          <figcaption>Finding Slag</figcaption>
+        </figure>
       </div>
 
      </div>
