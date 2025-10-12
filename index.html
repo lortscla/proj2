@@ -3,9 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instructional Site</title>
+
+     <link href="hamburgers.css" rel="stylesheet">   
+
+   <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/images/favicon/site.webmanifest" />
+
+    <style>
+
+     :root {
+        --header-color: #1B2A67;
+        --black-text-color: #000;
+        --hover-color: #2b6783;
+        --font-family: 'Lateef', serif;
+      }
+
+
+      body {
+        background-image: url('images/bg-image.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        }
+
+      #top-bar { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index:2;
+        position: relative;
+        margin-bottom: -20px;
+      }
+
+      header {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 30px 20px 5px 20px;
+      }
+
+      header h1 {
+        font-size: 90px;
+        font-family: Lateef, serif;
+        color: var(--header-color);
+        margin:0;
+        letter-spacing: 0.5px;
+      }
+
+      #toggle-nav-btn {
+       font-size: 50px;   
+       line-height: 1;
+       border: none;
+       background: none;
+       cursor: pointer;
+       display: none;  
+       padding: 0;
+       margin:0;
+      }
+
+      #primary-nav { 
+        display: block;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+     
+      .nav-menu {
+        display: flex;
+        width: 100%;
+        padding: 40px;
+        justify-content: center;
+      }
+
+      #primary-nav ul {
+        list-style: none; 
+        padding: 0 12px;
+        margin: 0;
+        display: flex;
+        justify-content: center; 
+        gap: 200px;
+        align-items: center;
+      }
+
+      #primary-nav a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 32px;
+        color: var(--header-color);
+      }
+
+      #primary-nav a:hover, 
+      #secondary-nav a:hover {
+        color: var(--hover-color);   
+        }  
+
+      #primary-nav a:visited, 
+      #secondary-nav a:visited {
+        text-decoration: none;
+        }  
+
+      .steps-img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70.75%;
+        }
+
+        .nav-steps {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        }
+
+      .image {
+          margin: -5px auto;
+          display: flex;
+          justify-content: center;
+          z-index: 1;
+          width:100%;
+          align-content: center;
+        }
+
+      #secondary-nav { 
+        width: 100%;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        margin:0 auto;
+        background-color: rgb(255, 255, 255);
+        border: 0.5px solid rgb(34, 34, 34);
+        z-index: 2;
+        box-sizing: border-box;
+        padding: 15px;
+      }
+
+
+      #secondary-nav ul {
+        list-style: none; 
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+
+      #secondary-nav a {
+        text-decoration: none;
+        font-weight: regular;
+        font-size: 30px;
+        color: var(--black-text-color);
+      }
+
+      body {
+            margin: 0;
+        }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px 10px 10px;
+        margin: 0 auto;
+      }
+
+      .all-text {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        font-size: 20px;
+        width: 75%;
+      }
+
+        .text-column {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            padding:60px;
+            font-size: 30px;
+            width: 50%;
+            color: var(--black-text-color);
+        } 
+     
+        footer {
+        background-color: var(--block-bg-color);
+        color: rgb(0, 0, 0); 
+        width: 100%;
+        margin: 0;
+        padding:0;
+        padding-top: 20px;
+        text-align: center;
+        margin-top: 100px; 
+        display: flex;
+        flex-direction: row;
+        border-radius: 10px;
+      }
+
+      .footer-left {
+        flex:1;
+        text-align: left;
+        padding: 5px 20px 0 10px;
+      }
+
+      .footer-center {
+        flex:1;
+        padding:10px;
+      }
+
+      .footer-right {
+        flex:1;
+        text-align: right; 
+        flex-direction: column;
+        padding: 10px 20px 0 0;
+        }
+
+      .footer-right a {
+        color: var(--black-text-color);
+      }  
+
+      .footer-right a:hover {
+        color: var(--hover-color); 
+      }
+
+      .sm-icons {
+        padding: 20px 0 20px 20px;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+      }
+
+               /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+
+        @media screen and (max-width: 767px) {
+           
+          h1 {
+            font-size: 30px;
+          }
+
+          .all-text {
+            flex-direction: column;
+            font-size: 12px;
+            margin: 0 auto;
+            width: 90%;
+          }
+
+          .container {
+            flex-direction: column;
+          } 
+
+          .text-column {
+            flex-direction: column;
+          }
+
+          .image img { 
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+
+          .image {
+            order: 1;
+            display:flex;
+            font-size: 12px;
+            flex-direction: row;
+            z-index: 1;
+            max-width: 50%;
+          }
+
+          .all-text {
+            order: 2;
+          }
+
+          #toggle-nav-btn {
+            display: block;
+            margin-left:auto;
+          }
+
+          #primary-nav {
+            display: none;
+            position: static;
+            background: white;
+          }
+
+          #primary-nav.show {
+            display: block;
+          }
+
+          #primary-nav ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            margin: 0;
+            gap: 0;
+          }
+
+          #primary-nav li {
+            padding: 10px 0;
+            text-align: center;
+          }
+
+          #primary-nav a {
+            text-decoration: none;
+            font-size: 20px;
+          }
+
+          #primary-nav a:hover, 
+          #primary-nav a:active {
+            border-radius: 5px;
+          }
+
+        }
+                /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+    </style> 
+    
 </head>
 <body>
-    
+
+    <div id="top-bar">
+       
+         <header>
+      <h1>Making Historic PA Iron Slag</h1>
+      </header>
+
+         <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
+          <span class="hamburger-box">
+          <span class="hamburger-inner">
+          </span>
+        </span>
+      </button>
+      
+      <div class="nav-menu">
+       <nav id="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="step-1.html">Steps</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+       </nav>
+      </div> 
+
+      <div class="steps-img-container">
+
+      <div class="nav-steps">
+       <nav id="secondary-nav">
+        <ul>
+          <li><a href="step-1.html">1. Slag Finding</a></li>
+          <li><a href="step-2.html">2. Slag Cutting</a></li>
+          <li><a href="step-3.html">3. Slag Shaping</a></li>
+          <li><a href="step-4.html">4. Silver Designing</a></li>
+          <li><a href="step-5.html">5. Silver Soldering</a></li>
+          <li><a href="step-6.html">6. Piece Finishing</a></li>
+        </ul>
+       </nav>
+      </div> 
+
+      <div class="image">
+        <img src="images/pendant-2.webp" alt="Finishing 1">
+        <img src="images/pendant-1.webp" alt="Finishing 1" >
+        <img src="images/pendant-3.webp" alt="Finishing 1" >
+        <img src="images/pendant-4.webp" alt="Finishing 1" >
+        <img src="images/pendant-5.webp" alt="Finishing 1" >
+        <!-- <figcaption>Univ. of MI Arb Peony</figcaption> -->
+      </div>
+
+      </div>
+
+     </div>
+
+    <main>
+
+      <div class="container">
+
+      <div class="all-text">
+
+      <div class="text-column"> 
+
+        <p>
+          Welcome to this step-by-step tutorial on creating historic iron slag pendants! In this guide, you’ll learn how to find and identify unique slag pieces, then transform them through lapidary techniques such as cutting, grinding, shaping, and polishing into striking cabochons. From there, we’ll cover designing a sterling silver setting design that complements your finished cabochon, teaching you 
+        </p>
+
+       </div>
+
+      <div class="text-column"> 
+        
+        <p>
+          how to fabricate, assemble, solder, fire, and finish the sterling silver setting. Then to put it all together, we’ll cover setting your cabochon into your finished setting.  By the end, you’ll not only learn to craft a unique piece of wearable history but also appreciate the artistry of turning industrial remnants into beautiful jewelry.
+        </p>
+     
+      </div>
+
+      </div>
+
+      </main>
+
+      <footer>
+
+        <div class="footer-left">
+          <div> <a href="mailto: info@cpt.com"> 
+            Contact: info@cpt.com
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-center">
+           <p> @ 2025 Creating PA Slag Pendants</p>
+        </div>
+
+        <div class="footer-right">
+          <div class="sm-icons">
+            <a href="https://www.facebook.com "> 
+              <img src="images/fb-bw.webp" alt="FB" width="40" height="40">
+            </a>
+            <a href="https://www.instagram.com "> 
+              <img src="images/ig-bw.webp" alt="IG" width="40" height="40">
+            </a>
+          </div>
+        </div>
+
+      </footer>
+
+            <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
+
+     <script>
+
+      window.onload = () => {
+        const toggleNavBtn = document.getElementById('toggle-nav-btn');
+  const primaryNav = document.getElementById('primary-nav');
+
+  toggleNavBtn.addEventListener('click', () => {
+    primaryNav.classList.toggle('show');
+    toggleNavBtn.classList.toggle('is-active');
+  });
+};
+
+    </script>
+
 </body>
 </html>
