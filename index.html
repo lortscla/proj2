@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructional Site</title>
-
-     <link href="hamburgers.css" rel="stylesheet">   
+    <title>Instructional Site</title> 
 
    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
@@ -84,8 +82,7 @@
         width: 3px;
         height: 50px;
         background-color: var(--black-text-color);
-        margin: 0 auto;
-        top: 100%;
+        margin-left: -20px;
         }
 
       .nav-menu {
@@ -97,18 +94,18 @@
 
       #primary-nav ul {
         list-style: none; 
-        padding: 0 12px;
+        padding: 0;
         margin: 0;
         display: flex;
         justify-content: center; 
-        gap: 200px;
+        gap: 220px;
         align-items: center;
       }
 
       #primary-nav a {
         text-decoration: none;
         font-weight: bold;
-        font-size: 32px;
+        font-size: 35px;
         color: var(--header-color);
       }
 
@@ -206,17 +203,14 @@
         } 
      
         footer {
-        background-color: var(--block-bg-color);
-        color: rgb(0, 0, 0); 
-        width: 100%;
-        margin: 0;
-        padding:0;
-        padding-top: 20px;
+        color: var(--black-text-color); 
+        width: 70%;
+        margin: 0 auto;
         text-align: center;
+        align-items: center;
         margin-top: 100px; 
         display: flex;
         flex-direction: row;
-        border-radius: 10px;
       }
 
       .footer-left {
@@ -234,7 +228,7 @@
         flex:1;
         text-align: right; 
         flex-direction: column;
-        padding: 10px 20px 0 0;
+        padding-right: 10px;
         }
 
       .footer-right a {
@@ -346,13 +340,6 @@
          <header>
       <h1>Making Historic PA Iron Slag</h1>
       </header>
-
-         <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
-          <span class="hamburger-box">
-          <span class="hamburger-inner">
-          </span>
-        </span>
-      </button>
       
       <div class="nav-menu">
        <nav id="primary-nav">
@@ -423,8 +410,8 @@
       <footer>
 
         <div class="footer-left">
-          <div> <a href="mailto: info@cpt.com"> 
-            Contact: info@cpt.com
+          <div> <a href="mailto: info@slagpendants.com"> 
+            Contact: info@slagpendants.com
             </a>
           </div>
         </div>
@@ -445,22 +432,6 @@
         </div>
 
       </footer>
-
-            <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
-
-     <script>
-
-      window.onload = () => {
-        const toggleNavBtn = document.getElementById('toggle-nav-btn');
-  const primaryNav = document.getElementById('primary-nav');
-
-  toggleNavBtn.addEventListener('click', () => {
-    primaryNav.classList.toggle('show');
-    toggleNavBtn.classList.toggle('is-active');
-  });
-};
-
-    </script>
 
 </body>
 </html>
