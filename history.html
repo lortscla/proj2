@@ -3,73 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 5</title>
+    <title>Step 1</title>
 
- <link href="hamburgers.css" rel="stylesheet">   
+     <link href="hamburgers.css" rel="stylesheet">   
+
+   <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/images/favicon/site.webmanifest" />
 
     <style>
 
-      header {
-        width: 100%;
-        background-color: lightskyblue;
-        text-align: center;
-        font-size: 20px;
+     :root {
+        --header-color: #1B2A67;
+        --black-text-color: #000;
+        --hover-color: #2b6783;
+        --font-family: 'Lateef', serif;
       }
 
-      .header-center {
-        position:absolute;
-        left:50%; /*this moves left edge to middle of parent...50% from the left*/
-        transform: translateX(-50%); /*this shifts it back to the left by 50% of its width (always half of parent) when shrinking*/
-        padding:10px;
-      }
 
-    #toggle-nav-btn {
-     font-size: 50px;   
-     line-height: 1;
-     border: none;
-     background: none;
-     cursor: pointer;
-     display: none;  
-     padding: 0;
-     margin:0;
-   }
+      body {
+        background-image: url('images/bg-image.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        }
 
       #top-bar { 
         display: flex;
-        height:100px;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
+        width: 100%;
+        z-index:2;
         position: relative;
       }
 
-      #primary-nav { 
-        display:block;
-        margin: 0px;
+      header {
         width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 30px 20px 5px 20px;
       }
 
-      nav ul {
-        list-style-type: none; 
-        padding: 20px;
+      header h1 {
+        font-size: 90px;
+        font-family: Lateef, serif;
+        color: var(--header-color);
+        margin:0;
+        letter-spacing: 0.5px;
+      }
+
+      h2 {
+        font-size: 40px;
+        font-family:var(--font-family);
+        color: var(--header-color);
+        margin: 0 auto;
+        padding: 50px;
+      }
+
+      #toggle-nav-btn {
+       font-size: 50px;   
+       line-height: 1;
+       border: none;
+       background: none;
+       cursor: pointer;
+       display: none;  
+       padding: 0;
+       margin:0;
+      }
+
+      #primary-nav { 
+        display: block;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 0 -30px 0;
+        padding-bottom: 40px;
+      }
+
+      .nav-menu {
+        display: flex;
+        width: 100%;
+        padding: 40px;
+        justify-content: center;
+      }
+
+      #primary-nav ul {
+        list-style: none; 
+        padding: 0;
+        margin: 0;
         display: flex;
         justify-content: center; 
-        gap: 40px
+        gap: 220px;
+        align-items: center;
       }
 
-      nav ul li {
-        margin: 15px; 
-      }
-
-      nav ul li a {
+      #primary-nav a {
         text-decoration: none;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 35px;
+        color: var(--header-color);
       }
 
-      nav ul li a:hover {
-        color: blue;   
+      #primary-nav a:hover, 
+      #secondary-nav a:hover {
+        color: var(--hover-color);   
         }  
+
+      #primary-nav a:visited, 
+      #secondary-nav a:visited {
+        text-decoration: none;
+        }  
+
+       .dropdown {
+        position: relative;
+        display: inline-block;
+       }
+
+       #steps-btn {
+        background: none;
+        border: none;
+        font-size: 35px;
+        font-weight: bold;
+        color: var(--header-color);
+        cursor: pointer;
+        font-family: Lateef, serif;
+        }
+
+        #steps-btn:hover {
+        color: var(--hover-color);
+        }
+
+        .image {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          gap: 70px;
+          margin:0 auto;
+        }
+
+        .image figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        }
+
+        .image figcaption {
+        font-size: 20px;
+        color: var(--black-text-color);
+        margin-top: 10px;
+        font-family: var(--font-family);
+        }
+
+      #secondary-nav { 
+        position:absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        justify-content: center;
+        margin:0 auto;
+        background-color: rgb(255, 255, 255);
+        border: 0.5px solid rgb(34, 34, 34);
+        z-index: 3;
+      }
+
+      #secondary-nav.show {
+        display: block;
+      }
+
+      #secondary-nav ul {
+        list-style: none; 
+        padding: 15px;
+        margin: 0 auto;
+
+      }
+
+      #secondary-nav a {
+        text-decoration: none;
+        font-weight: regular;
+        font-size: 25px;
+        color: var(--black-text-color);
+      }
+
+
+      #secondary-nav a:hover {
+        color: var(--hover-color);
+        }
 
       body {
             margin: 0;
@@ -77,48 +198,108 @@
 
       .container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        padding: 10px;
+        padding: 0 10px 10px 10px;
+        margin: 0 auto;
       }
 
       .all-text {
         display: flex;
-        flex-direction: column;
-        flex:1;
+        flex-direction: row;
+        margin: 0 auto;
+        font-size: 20px;
+        width: 45%;
+        color: var(--black-text-color);
+        font-size: 30px;
+        padding: 40px;
+        margin: 0 auto;
+      }
+     
+      .progression-buttons {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        }
+
+        .progression-buttons nav {
+        display: flex;
+        justify-content: center;
+        }
+
+        .progression-buttons a {
+        display: inline-block;
+        padding: 15px 40px;
+        border: 2px solid #000;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--header-color);
+        background-color: white;
+        }
+
+        .progression-buttons a:hover {
+        color: var(--hover-color);
+        border-color: var(--black-text-color);
+        cursor: pointer;
+        border-radius: 5px;
+        }
+
+        footer {
+        color: var(--black-text-color); 
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        margin-top: 50px; 
+        display: flex;
+        flex-direction: row;
       }
 
-        .flex {
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            padding:20px;
-            font-size: 20px;
+      .footer-left {
+        flex:1;
+        text-align: left;
+        padding: 5px 20px 0 10px;
+      }
+
+      .footer-center {
+        flex:1;
+        padding:10px;
+      }
+
+      .footer-right {
+        flex:1;
+        text-align: right; 
+        flex-direction: column;
+        padding-right: 10px;
         }
 
-        .image {
-          margin: 0 auto;
-          padding:20px;
-          padding-top: 50px;
-          font-size: 20px;
-          text-align: center;
-        }
+      .footer-right a {
+        color: var(--black-text-color);
+      }  
 
-        figcaption {
-          font-size: 20px;
-          text-align: center;
-        }
+      .footer-right a:hover {
+        color: var(--hover-color); 
+      }
 
-        .text-column {
-            display: flex;
-            flex-direction: row;
-        } 
-     
+      .sm-icons {
+        padding: 20px 0 20px 20px;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+      }
+
                /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
 
         @media screen and (max-width: 767px) {
-            
-          .flex {
+           
+          h1 {
+            font-size: 30px;
+          }
+
+          .all-text {
             flex-direction: column;
             font-size: 12px;
             margin: 0 auto;
@@ -134,7 +315,7 @@
           }
 
           .image img { 
-            width: 90%;
+            width: 80%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -144,18 +325,13 @@
             order: 1;
             display:flex;
             font-size: 12px;
-            flex-direction: column;
+            flex-direction: row;
+            z-index: 1;
+            max-width: 50%;
           }
 
           .all-text {
             order: 2;
-          }
-
-          .header-center {
-            position: static;
-            transform: none;
-            padding: 0;
-            margin-left: auto;
           }
 
           #toggle-nav-btn {
@@ -165,14 +341,8 @@
 
           #primary-nav {
             display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 200px;
+            position: static;
             background: white;
-            border-radius: 0 0 10px 10px;
-            box-sizing: border-box;
-            padding: 10px 0;
           }
 
           #primary-nav.show {
@@ -182,13 +352,14 @@
           #primary-nav ul {
             display: flex;
             flex-direction: column;
-            padding: 0;
+            align-items: center;
+            padding: 10px 0;
             margin: 0;
             gap: 0;
           }
 
           #primary-nav li {
-            padding: 10px 20px;
+            padding: 10px 0;
             text-align: center;
           }
 
@@ -209,99 +380,141 @@
 </head>
 <body>
 
-      <div class="entire-page-container">
+    <div id="top-bar">
+       
+         <header>
+      <h1>Making Historic PA Iron Slag Pendants</h1>
+      </header>
 
-     <div id="top-bar">
-       <div class="header-center">
-       </div>
-       
-       
-         <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
+        <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
           <span class="hamburger-box">
           <span class="hamburger-inner">
           </span>
-        </span>
-      </button>
+         </span>
+        </button>
       
+      <div class="nav-menu">
        <nav id="primary-nav">
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <button id="steps-btn">Steps ▼</button>
+            <nav id="secondary-nav">
+                <ul>
+                    <li><a href="step-1.html">1. Slag Finding</a></li>
+                    <li><a href="step-2.html">2. Slag Cutting</a></li>
+                    <li><a href="step-3.html">3. Slag Shaping</a></li>
+                    <li><a href="step-4.html">4. Silver Designing</a></li>
+                    <li><a href="step-5.html">5. Silver Soldering</a></li>
+                    <li><a href="step-6.html">6. Piece Finishing</a></li>
+                </ul>
+            </nav>
+          </li>
+          <li><a href="history.html">History</a></li>
         </ul>
        </nav>
+      </div> 
+
+      <div> <h2>Stept 1 of 6: Finding Iron Slag</h2>
+        </div>
       
+      <div class="image">
+        <figure>
+          <img src="images/finding-2.webp" alt="2" >
+          <figcaption>Greenwood Furnace</figcaption>
+        </figure>
+          <figure>
+          <img src="images/finding-1.webp" alt="1">
+          <figcaption>Finding Slag</figcaption>
+        </figure>
       </div>
 
-      <header>
-      <h1>Title of Page</h1>
-      </header>
+     </div>
 
-      <main>
+    <main>
 
       <div class="container">
 
       <div class="all-text">
 
-      <div class="text-column"> 
+          <ol>
+            <li>
+                The first step in creating slag jewelry is hunting for it! Slag was created and is found surrounding the 19th century cold blast iron furnaces, and hunting for the perfect piece is often an adventure. 
+            </li>
+            <br><li>
+                Slag was heavy, so workers often dumped it in nearby pits and streams. These are the locations where most slag is found.
+            </li>
+            <br><li>
+                The best pieces of slag for jewelry have high density (more like glass, with no pores or holes) and are blue with variations in blues and whites. 
+            </li>
+            <br><li>
+                Make sure to obtain permission from the curator or land owner prior to taking slag from the historic iron furnace.
+            </li>
+          </ol>
+    
+      </div>
 
-       <div class="flex">
+        <div class="progression-buttons">
+         <nav>
+          <a href="step-2.html">Next Step</a>
+       </nav>
+      </div> 
+
+      </main>
+
+      <footer>
+
+        <div class="footer-left">
+          <div> <a href="mailto: info@cpt.com"> 
+            Contact: info@cpt.com
+            </a>
+          </div>
+        </div>
         
-        <h2> Subheader</h2>
-        <p>
-          Contrary to their host cells, many viruses contain RNA as genetic material and hence encode an RNA-dependent RNA polymerase to replicate their genomes. This review discusses the present status of our knowledge on the structure of these enzymes and the mechanisms of RNA replication. The simplest viruses encode only the catalytic subunit of the replication complex, but other viruses also contribute a variable number of ancillary factors. These and other factors provided by the host cell play roles in the specificity and affinity of template recognition
-        </p>
-      </div>
+        <div class="footer-center">
+           <p> @ 2025 Creating PA Slag Pendants</p>
+        </div>
 
-      <div class="flex">
-      <h2> Subheader</h2>
-        <p>
-          Contrary to their host cells, many viruses contain RNA as genetic material and hence encode an RNA-dependent RNA polymerase to replicate their genomes. This review discusses the present status of our knowledge on the structure of these enzymes and the mechanisms of RNA replication. The simplest viruses encode only the catalytic subunit of the replication complex, but other viruses also contribute a variable number of ancillary factors. These and other factors provided by the host cell play roles in the specificity and affinity of template recognition
-        </p>
-      </div>
+        <div class="footer-right">
+          <div class="sm-icons">
+            <a href="https://www.facebook.com "> 
+              <img src="images/fb-bw.webp" alt="FB" width="40" height="40">
+            </a>
+            <a href="https://www.instagram.com "> 
+              <img src="images/ig-bw.webp" alt="IG" width="40" height="40">
+            </a>
+          </div>
+        </div>
 
-    </div>
+      </footer>
 
-    <div class="text-column"> 
-
-      <div class="flex">
-        <h2> Subheader</h2>
-        <p>
-          Contrary to their host cells, many viruses contain RNA as genetic material and hence encode an RNA-dependent RNA polymerase to replicate their genomes. This review discusses the present status of our knowledge on the structure of these enzymes and the mechanisms of RNA replication. The simplest viruses encode only the catalytic subunit of the replication complex, but other viruses also contribute a variable number of ancillary factors. These and other factors provided by the host cell play roles in the specificity and affinity of template recognition
-        </p>
-      </div>
-
-      <div class="flex">
-        <h2> Subheader</h2>
-        <p>
-          Contrary to their host cells, many viruses contain RNA as genetic material and hence encode an RNA-dependent RNA polymerase to replicate their genomes. This review discusses the present status of our knowledge on the structure of these enzymes and the mechanisms of RNA replication. The simplest viruses encode only the catalytic subunit of the replication complex, but other viruses also contribute a variable number of ancillary factors. These and other factors provided by the host cell play roles in the specificity and affinity of template recognition
-        </p>
-      </div>
-     
-      </div>
-
-      </div>
-
-      <div class="image">
-        <img src="images/Flower_Center_1.webp" alt="Flower Image" width=100%>
-        <figcaption>Univ. of MI Arb Peony</figcaption>
-      </div>
-
-     </div>
             <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
-     </main>
 
      <script>
 
-      window.onload = () => {
-        const toggleNavBtn = document.getElementById('toggle-nav-btn');
+     window.onload = () => {
+  // Hamburger menu toggle
+  const toggleNavBtn = document.getElementById('toggle-nav-btn');
   const primaryNav = document.getElementById('primary-nav');
-
   toggleNavBtn.addEventListener('click', () => {
     primaryNav.classList.toggle('show');
     toggleNavBtn.classList.toggle('is-active');
   });
-};
 
+  // Steps dropdown toggle
+  const stepsBtn = document.getElementById('steps-btn');
+  const secondaryNav = document.getElementById('secondary-nav');
+  stepsBtn.addEventListener('click', () => {
+    secondaryNav.classList.toggle('show');
+  });
+
+  // Optional: close dropdown if clicking outside
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.dropdown')) {
+      secondaryNav.classList.remove('show');
+    }
+  });
+};
     </script>
 
 </body>
