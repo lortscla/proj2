@@ -20,7 +20,6 @@
         --font-family: 'Lateef', serif;
       }
 
-
       body {
         background-image: url('images/bg-image.webp');
         background-repeat: no-repeat;
@@ -46,41 +45,30 @@
       }
 
       header h1 {
-        font-size: 90px;
+        font-size: 60px;
         font-family: Lateef, serif;
         color: var(--header-color);
         margin:0;
         letter-spacing: 0.5px;
       }
 
-      #toggle-nav-btn {
-       font-size: 50px;   
-       line-height: 1;
-       border: none;
-       background: none;
-       cursor: pointer;
-       display: none;  
-       padding: 0;
-       margin:0;
-      }
 
       #primary-nav { 
         display: block;
         width: 100%;
-        max-width: 1440px;
-        margin: 0 0 -30px 0;
+        margin: 0 0 -15px 0;
       }
 
      #primary-nav li:nth-child(2) a {
         text-decoration: underline;
-        text-underline-offset: 15px;
+        text-underline-offset: 10px;
         text-decoration-thickness: 2px;
         text-decoration-color: var(--black-text-color);
         }
         
      .connector-line {
         width: 3px;
-        height: 50px;
+        height: 30px;
         background-color: var(--black-text-color);
         margin-left: -20px;
         }
@@ -88,7 +76,7 @@
       .nav-menu {
         display: flex;
         width: 100%;
-        padding: 40px;
+        padding: 20px;
         justify-content: center;
       }
 
@@ -105,7 +93,7 @@
       #primary-nav a {
         text-decoration: none;
         font-weight: bold;
-        font-size: 35px;
+        font-size: 25px;
         color: var(--header-color);
       }
 
@@ -123,7 +111,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 1978px;
+        width: 1440px;
         margin: 0 auto;
         }
 
@@ -132,28 +120,20 @@
         margin: 0 auto;
         width: 100%;
         display: flex;
-        white-space: nowrap;
         }
        
-      .image {
+      .hero {
           margin: -5px auto;
-          display: flex;
-          justify-content: center;
+          mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
           z-index: 1;
           width:100%;
-          gap: -20px;
         }
 
         .nav-steps,
-        .image {
+        .hero {
           width: 100%;
           display: flex;
           justify-content: center;
-        }
-
-        .image img {
-        margin-left: -20px;
-        margin-right: -20px;
         }
         
       #secondary-nav { 
@@ -162,9 +142,8 @@
         background-color: rgb(255, 255, 255);
         border: 0.5px solid rgb(34, 34, 34);
         z-index: 2;
-        box-sizing: border-box;
         padding: 15px;
-        width: 100%;
+        width: 1240px;
         margin:0 auto;
       }
 
@@ -185,7 +164,7 @@
       #secondary-nav a {
         text-decoration: none;
         font-weight: regular;
-        font-size: 30px;
+        font-size: 15px;
         color: var(--black-text-color);
       }
 
@@ -197,31 +176,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 10px 10px 10px;
+        padding: 0;
         margin: 0 auto;
+        width: 1320px;
       }
 
-      .all-text {
-        display: flex;
-        flex-direction: row;
+      .text {
         margin: 0 auto;
-        font-size: 20px;
-        width: 75%;
+        font-size: 25px;
+        width: 85%;
+        color: var(--black-text-color);
+        padding: 50px 0 50px 0;
       }
-
-        .text-column {
-            display: flex;
-            flex-direction: row;
-            margin: 0 auto;
-            padding:60px;
-            font-size: 30px;
-            width: 50%;
-            color: var(--black-text-color);
-        } 
      
         footer {
         color: var(--black-text-color); 
-        width: 70%;
+        width:95%;
         margin: 0 auto;
         text-align: center;
         align-items: center;
@@ -268,32 +238,29 @@
         @media screen and (max-width: 767px) {
            
           h1 {
-            font-size: 30px;
+            font-size: 20px;
           }
 
-          .all-text {
+          .text {
             flex-direction: column;
             font-size: 12px;
             margin: 0 auto;
             width: 90%;
+            order:2
           }
 
           .container {
             flex-direction: column;
-          } 
-
-          .text-column {
-            flex-direction: column;
           }
 
-          .image img { 
+          .hero img { 
             width: 80%;
             height: auto;
             display: block;
             margin: 0 auto;
           }
 
-          .image {
+          .hero {
             order: 1;
             display:flex;
             font-size: 12px;
@@ -302,13 +269,10 @@
             max-width: 50%;
           }
 
-          .all-text {
-            order: 2;
-          }
-
           #toggle-nav-btn {
             display: block;
             margin-left:auto;
+            font-size: 12px;
           }
 
           #primary-nav {
@@ -385,13 +349,8 @@
        </nav>
       </div> 
 
-      <div class="image">
-        <img src="images/pendant-2.webp" alt="Finishing 1">
-        <img src="images/pendant-1.webp" alt="Finishing 1" >
-        <img src="images/pendant-3.webp" alt="Finishing 1" >
-        <img src="images/pendant-4.webp" alt="Finishing 1" >
-        <img src="images/pendant-5.webp" alt="Finishing 1" >
-        <!-- <figcaption>Univ. of MI Arb Peony</figcaption> -->
+      <div class="hero">
+        <img src="images/hero.webp" alt="Finishing 1">
       </div>
 
       </div>
@@ -402,27 +361,13 @@
 
       <div class="container">
 
-      <div class="all-text">
-
-      <div class="text-column"> 
+      <div class="text"> 
 
         <p>
-          Welcome to this step-by-step tutorial on creating historic iron slag pendants! In this guide, you’ll learn how to find and identify unique slag pieces, then transform them through lapidary techniques such as cutting, grinding, shaping, and polishing into striking cabochons. From there, we’ll cover designing a sterling silver setting design that complements your finished cabochon, teaching you 
+          Welcome to this step-by-step tutorial on creating historic iron slag pendants! In this guide, you’ll learn how to find and identify unique slag pieces, then transform them through lapidary techniques such as cutting, grinding, shaping, and polishing into striking cabochons. From there, we’ll cover designing a sterling silver setting design that complements your finished cabochon, teaching you how to fabricate, assemble, solder, fire, and finish the sterling silver setting. Then to put it all together, we’ll cover setting your cabochon into your finished setting. By the end, you’ll not only learn to craft a unique piece of wearable history but also appreciate the artistry of turning industrial remnants into beautiful jewelry. 
         </p>
 
        </div>
-
-      <div class="text-column"> 
-        
-        <p>
-          how to fabricate, assemble, solder, fire, and finish the sterling silver setting. Then to put it all together, we’ll cover setting your cabochon into your finished setting. By the end, you’ll not only learn to craft a unique piece of wearable history but also appreciate the artistry of turning industrial remnants into beautiful jewelry.
-        </p>
-     
-      </div>
-
-      </div>
-
-      </main>
 
       <footer>
 
@@ -449,6 +394,6 @@
         </div>
 
       </footer>
-
+     </main>
 </body>
 </html>
