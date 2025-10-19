@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 5: Silver Soldering</title>
+
+     <link href="hamburgers.css" rel="stylesheet">   
+
+   <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/images/favicon/site.webmanifest" />
+
+    <style>
+
+       :root {
+        --header-color: #1B2A67;
+        --black-text-color: #000;
+        --hover-color: #2b6783;
+        --font-family: 'Lateef', serif;
+      }
+
+      html, body{
+        margin:0;
+        padding:0;
+        overflow-x: hidden;
+        overflow-y: scroll; /* I'm adding this to prevent hte slight shift to the left of header and bar when scrolling is necessary*/
+       }                       
+
+      body {
+        background-image: url('images/bg-image.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        }
+
+      #top-bar { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index:2;
+        position: relative;
+        margin-bottom: -20px;
+      }
+
+      header {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 30px 20px 5px 20px;
+      }
+
+      header h1 {
+        font-size: 60px;
+        font-family: var(--font-family);
+        color: var(--header-color);
+        margin:0;
+        letter-spacing: 0.5px;
+      }
+
+        h2 {
+        font-size: 40px;
+        font-family:var(--font-family);
+        color: var(--header-color);
+        margin: 0 auto;
+        padding: 70px 0 40px 0;
+        text-align: center;
+      }
+
+      #primary-nav { 
+        display: block;
+        width: 100%;
+        margin: 0 0 -15px 0;
+      }
+
+     #primary-nav li:nth-child(2) a {
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--black-text-color);
+        }
+        
+     .connector-line {
+        width: 3px;
+        height: 30px;
+        background-color: var(--black-text-color);
+        margin-left: -20px;
+        }
+
+      .nav-menu {
+        display: flex;
+        width: 100%;
+        padding: 20px;
+        justify-content: center;
+      }
+
+      #primary-nav ul {
+        list-style: none; 
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center; 
+        gap: 220px;
+        align-items: center;
+      }
+
+      #primary-nav a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 25px;
+        color: var(--header-color);
+      }
+
+      #primary-nav a:hover, 
+      #secondary-nav a:hover {
+        color: var(--hover-color);   
+        }  
+
+      #primary-nav a:visited, 
+      #secondary-nav a:visited {
+        text-decoration: none;
+        }  
+        
+        #toggle-nav-btn {
+        display: none; /* hide for desktop, above 767px */
+        }
+
+        .nav-steps {
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        width: 1440px;
+        align-items: center;
+        }
+       
+       .image {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          gap: 10px;
+          margin:0 auto;
+        }
+
+        .image figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        }
+
+        .image figcaption {
+        font-size: 25px;
+        color: var(--black-text-color);
+        font-family: var(--font-family);
+        }
+
+        .nav-steps,
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        
+      #secondary-nav { 
+        display: flex;
+        justify-content: center;
+        background-color: rgb(255, 255, 255);
+        border: 0.5px solid rgb(34, 34, 34);
+        z-index: 2;
+        padding: 15px;
+        width: 1440px;
+        margin:0 auto;
+      }
+
+      #secondary-nav li {
+        flex: 1;
+        text-align: center;
+      }
+
+      #secondary-nav ul {
+        list-style: none; 
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+
+      #secondary-nav a {
+        text-decoration: none;
+        font-weight: regular;
+        font-size: 20px;
+        color: var(--black-text-color);
+      }
+
+      body {
+            margin: 0;
+        }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        max-width: 1440px;
+        width:100%;
+      }
+    
+      .all-text-and-buttons {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .all-text {
+        display: flex;
+        margin: 0 auto;
+        font-size: 25px;
+        width: 100%;
+        color: var(--black-text-color);
+        padding-left: 30px;
+        padding-top: -20px;
+        margin: 0 auto;
+      }
+
+      .progression-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px auto 20px auto;
+        padding-left:65px;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        .progression-buttons nav {
+        display: flex;
+        justify-content: center;
+        }
+
+        .progression-buttons a {
+        padding: 15px 40px;
+        border: 2px solid #000;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--header-color);
+        background-color: white;
+        }
+
+        .progression-buttons a:hover {
+        color: var(--hover-color);
+        border-color: var(--black-text-color);
+        cursor: pointer;
+        border-radius: 5px;
+        }
+
+        footer {
+        color: var(--black-text-color); 
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        padding-top: 40px; 
+        display: flex;
+        flex-direction: row;
+        width:1440px;
+      }
+
+      .footer-left {
+        flex:1;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+       .footer-left a {
+        color: var(--black-text-color);
+      }  
+
+      .footer-left a:hover {
+        color: var(--hover-color); 
+      }
+
+      .footer-center {
+        flex:1;
+      }
+
+      .footer-right {
+        flex:1;
+        text-align: right; 
+        flex-direction: column;
+        padding-right: 10px;
+        }
+
+      .footer-right a {
+        color: var(--black-text-color);
+      }  
+
+      .footer-right a:hover {
+        color: var(--hover-color); 
+      }
+
+      .sm-icons {
+        padding: 20px 0 20px 20px;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+      }
+
+               /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+
+        @media screen and (max-width: 767px) {
+           
+          h1 {
+            font-size: 30px;
+          }
+
+          .all-text {
+            flex-direction: column;
+            font-size: 12px;
+            margin: 0 auto;
+            width: 90%;
+          }
+
+          .container {
+            flex-direction: column;
+          } 
+
+          .text-column {
+            flex-direction: column;
+          }
+
+          .image img { 
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+
+          .image {
+            order: 1;
+            display:flex;
+            font-size: 12px;
+            flex-direction: row;
+            max-width: 50%;
+          }
+
+          .all-text {
+            order: 2;
+          }
+
+          #toggle-nav-btn {
+            display: block;
+            margin-left:auto;
+          }
+
+          #primary-nav {
+            display: none;
+            position: static;
+            background: white;
+          }
+
+          #primary-nav.show {
+            display: block;
+          }
+
+          #primary-nav ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            margin: 0;
+            gap: 0;
+          }
+
+          #primary-nav li {
+            padding: 10px 0;
+            text-align: center;
+          }
+
+          #primary-nav a {
+            text-decoration: none;
+            font-size: 20px;
+          }
+
+          #primary-nav a:hover, 
+          #primary-nav a:active {
+            border-radius: 5px;
+          }
+
+        }
+                /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+    </style> 
+    
+</head>
+<body>
+
+    <div id="top-bar">
+       
+         <header>
+      <h1>Making Historic PA Iron Slag Pendants</h1>
+      </header>
+
+        <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
+          <span class="hamburger-box">
+          <span class="hamburger-inner">
+          </span>
+         </span>
+        </button>
+      
+      <div class="nav-menu">
+       <nav id="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="step-1.html">Steps</a></li>
+          <li><a href="history.html">History</a></li>
+        </ul>
+       </nav>
+      </div> 
+
+      <div class="connector-line"></div> 
+
+      <div class="nav-steps">
+       <nav id="secondary-nav">
+        <ul>
+          <li><a href="step-1.html">1. Finding Slag</a></li>
+          <li><a href="step-2.html">2. Cutting Slag</a></li>
+          <li><a href="step-3.html">3. Shaping Slag</a></li>
+          <li><a href="step-4.html">4. Silver Designing</a></li>
+          <li><a href="step-5.html">5. Silver Soldering</a></li>
+          <li><a href="step-6.html">6. Piece Finishing</a></li>
+        </ul>
+       </nav>
+      </div> 
+     
+      </div>
+
+      <main>
+
+      <div> <h2>Step 5 of 6: Silver Soldering</h2>
+        </div>
+      
+      <div class="container">
+
+      <div class="image">
+        <figure>
+          <img src="images/soldering-1.webp" alt="2" >
+          <figcaption>Beginner Soldering Torch</figcaption>
+        </figure>
+          <figure>
+          <img src="images/soldering-2.webp" alt="1">
+          <figcaption>Fire Brick & Third Hands</figcaption>
+        </figure>
+      </div>
+
+      <div class="all-text-and-buttons">
+
+      <div class="all-text">
+
+          <ol>
+            <li>
+                Once all sterling silver components are made for your design, clean all joins completely by sanding. Do not touch the clean areas as the oils on your hands will prevent successful soldering. Add flux and solder to all joins. Let dry for several minutes.
+            </li>
+            <br><li>
+                Carefully place the piece on a fire brick or on a raised mesh stand and fire the entire piece with your torch until solder flows. 
+            </li>
+            <br><li>
+                After firing, let cool for a 30 seconds, then use tongs to put into water for several seconds to further cool. It is normal for the piece to sizzle in the water. Take out of the water and assess components to make sure soldering was successful.
+            </li>
+          </ol>
+    
+      </div>
+
+        <div class="progression-buttons">
+         <div class="previous-step">
+         <nav>
+          <a href="step-4.html">Previous Step</a>
+        </nav>
+        </div>   
+         <div class="next-step">
+            <nav>
+             <a href="step-6.html">Next Step</a>
+            </nav>
+            </div>
+        </div> 
+
+        </div>
+
+      </div>
+
+      <footer>
+
+        <div class="footer-left">
+          <div> <a href="mailto: info@slagpendants.com"> 
+            info@slagpendants.com
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-center">
+           <p> @ 2025 Creating PA Slag Pendants</p>
+        </div>
+
+        <div class="footer-right">
+          <div class="sm-icons">
+            <a href="https://www.facebook.com "> 
+              <img src="images/fb-bw.webp" alt="FB" width="60">
+            </a>
+            <a href="https://www.instagram.com "> 
+              <img src="images/ig-bw.webp" alt="IG" width="55">
+            </a>
+          </div>
+        </div>
+
+      </footer>
+      
+     </main>
+            <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
+
+     <script>
+
+     window.onload = () => {
+  // Hamburger menu toggle
+  const toggleNavBtn = document.getElementById('toggle-nav-btn');
+  const primaryNav = document.getElementById('primary-nav');
+  toggleNavBtn.addEventListener('click', () => {
+    primaryNav.classList.toggle('show');
+    toggleNavBtn.classList.toggle('is-active');
+  });
+
+  // Steps dropdown toggle
+  const stepsBtn = document.getElementById('steps-btn');
+  const secondaryNav = document.getElementById('secondary-nav');
+  stepsBtn.addEventListener('click', () => {
+    secondaryNav.classList.toggle('show');
+  });
+
+  // Optional: close dropdown if clicking outside
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.dropdown')) {
+      secondaryNav.classList.remove('show');
+    }
+  });
+};
+    </script>
+
+</body>
+</html>
