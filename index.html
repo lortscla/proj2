@@ -20,6 +20,13 @@
         --font-family: 'Lateef', serif;
       }
 
+      html, body{
+        margin:0;
+        padding:0;
+        overflow-x: hidden;
+        overflow-y: scroll; /* I'm adding this to prevent hte slight shift to the left of header and bar when scrolling is necessary*/
+      } 
+
       body {
         background-image: url('images/bg-image.webp');
         background-repeat: no-repeat;
@@ -46,12 +53,11 @@
 
       header h1 {
         font-size: 60px;
-        font-family: Lateef, serif;
+        font-family: var(--font-family);
         color: var(--header-color);
         margin:0;
         letter-spacing: 0.5px;
       }
-
 
       #primary-nav { 
         display: block;
@@ -143,7 +149,7 @@
         border: 0.5px solid rgb(34, 34, 34);
         z-index: 2;
         padding: 15px;
-        width: 1240px;
+        width: 1440px;
         margin:0 auto;
       }
 
@@ -164,7 +170,7 @@
       #secondary-nav a {
         text-decoration: none;
         font-weight: regular;
-        font-size: 15px;
+        font-size: 20px;
         color: var(--black-text-color);
       }
 
@@ -178,20 +184,20 @@
         justify-content: center;
         padding: 0;
         margin: 0 auto;
-        width: 1320px;
+        width: 1440px;
       }
 
       .text {
         margin: 0 auto;
         font-size: 25px;
-        width: 85%;
+        width: 95%;
         color: var(--black-text-color);
         padding: 50px 0 50px 0;
       }
      
         footer {
         color: var(--black-text-color); 
-        width:95%;
+        width:100%;
         margin: 0 auto;
         text-align: center;
         align-items: center;
@@ -203,12 +209,11 @@
       .footer-left {
         flex:1;
         text-align: left;
-        padding: 5px 20px 0 10px;
+        padding-left:10px;
       }
 
       .footer-center {
         flex:1;
-        padding:10px;
       }
 
       .footer-right {
@@ -229,7 +234,6 @@
       .sm-icons {
         padding: 20px 0 20px 20px;
         display: flex;
-        gap: 20px;
         justify-content: flex-end;
       }
 
@@ -350,7 +354,7 @@
       </div> 
 
       <div class="hero">
-        <img src="images/hero.webp" alt="Finishing 1">
+        <img src="images/hero.webp" alt="Finishing 1", width="1440">
       </div>
 
       </div>
@@ -373,7 +377,7 @@
 
         <div class="footer-left">
           <div> <a href="mailto: info@slagpendants.com"> 
-            Contact: info@slagpendants.com
+            info@slagpendants.com
             </a>
           </div>
         </div>
@@ -385,15 +389,16 @@
         <div class="footer-right">
           <div class="sm-icons">
             <a href="https://www.facebook.com "> 
-              <img src="images/fb-bw.webp" alt="FB" width="40" height="40">
+              <img src="images/fb-bw.webp" alt="FB" width="60" >
             </a>
             <a href="https://www.instagram.com "> 
-              <img src="images/ig-bw.webp" alt="IG" width="40" height="40">
+              <img src="images/ig-bw.webp" alt="IG" width="55">
             </a>
           </div>
         </div>
 
       </footer>
+      </div>
      </main>
 </body>
 </html>

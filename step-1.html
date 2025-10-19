@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 1</title>
+    <title>Step 1: Finding Slag</title>
 
      <link href="hamburgers.css" rel="stylesheet">   
 
@@ -15,13 +15,19 @@
 
     <style>
 
-     :root {
+       :root {
         --header-color: #1B2A67;
         --black-text-color: #000;
         --hover-color: #2b6783;
         --font-family: 'Lateef', serif;
       }
 
+      html, body{
+        margin:0;
+        padding:0;
+        overflow-x: hidden;
+        overflow-y: scroll; /* I'm adding this to prevent hte slight shift to the left of header and bar when scrolling is necessary*/
+       }                       
 
       body {
         background-image: url('images/bg-image.webp');
@@ -37,6 +43,7 @@
         width: 100%;
         z-index:2;
         position: relative;
+        margin-bottom: -20px;
       }
 
       header {
@@ -47,44 +54,46 @@
       }
 
       header h1 {
-        font-size: 90px;
-        font-family: Lateef, serif;
+        font-size: 60px;
+        font-family: var(--font-family);
         color: var(--header-color);
         margin:0;
         letter-spacing: 0.5px;
       }
 
-      h2 {
+        h2 {
         font-size: 40px;
         font-family:var(--font-family);
         color: var(--header-color);
         margin: 0 auto;
-        padding: 50px;
-      }
-
-      #toggle-nav-btn {
-       font-size: 50px;   
-       line-height: 1;
-       border: none;
-       background: none;
-       cursor: pointer;
-       display: none;  
-       padding: 0;
-       margin:0;
+        padding: 70px 0 40px 0;
+        text-align: center;
       }
 
       #primary-nav { 
         display: block;
         width: 100%;
-        max-width: 1440px;
-        margin: 0 0 -30px 0;
-        padding-bottom: 40px;
+        margin: 0 0 -15px 0;
       }
+
+     #primary-nav li:nth-child(2) a {
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--black-text-color);
+        }
+        
+     .connector-line {
+        width: 3px;
+        height: 30px;
+        background-color: var(--black-text-color);
+        margin-left: -20px;
+        }
 
       .nav-menu {
         display: flex;
         width: 100%;
-        padding: 40px;
+        padding: 20px;
         justify-content: center;
       }
 
@@ -101,7 +110,7 @@
       #primary-nav a {
         text-decoration: none;
         font-weight: bold;
-        font-size: 35px;
+        font-size: 25px;
         color: var(--header-color);
       }
 
@@ -114,31 +123,25 @@
       #secondary-nav a:visited {
         text-decoration: none;
         }  
-
-       .dropdown {
-        position: relative;
-        display: inline-block;
-       }
-
-       #steps-btn {
-        background: none;
-        border: none;
-        font-size: 35px;
-        font-weight: bold;
-        color: var(--header-color);
-        cursor: pointer;
-        font-family: Lateef, serif;
+        
+        #toggle-nav-btn {
+        display: none; /* hide for desktop, above 767px */
         }
 
-        #steps-btn:hover {
-        color: var(--hover-color);
+        .nav-steps {
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        width: 1440px;
+        align-items: center;
         }
-
-        .image {
+       
+       .image {
           display: flex;
           flex-direction: row;
           justify-content: center;
-          gap: 70px;
+          gap: 10px;
           margin:0 auto;
         }
 
@@ -150,47 +153,49 @@
         }
 
         .image figcaption {
-        font-size: 20px;
+        font-size: 25px;
         color: var(--black-text-color);
-        margin-top: 10px;
         font-family: var(--font-family);
         }
 
+        .nav-steps,
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        
       #secondary-nav { 
-        position:absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        display: none;
+        display: flex;
         justify-content: center;
-        margin:0 auto;
         background-color: rgb(255, 255, 255);
         border: 0.5px solid rgb(34, 34, 34);
-        z-index: 3;
+        z-index: 2;
+        padding: 15px;
+        width: 1440px;
+        margin:0 auto;
       }
 
-      #secondary-nav.show {
-        display: block;
+      #secondary-nav li {
+        flex: 1;
+        text-align: center;
       }
 
       #secondary-nav ul {
         list-style: none; 
-        padding: 15px;
+        padding: 0;
         margin: 0 auto;
-
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
       }
 
       #secondary-nav a {
         text-decoration: none;
         font-weight: regular;
-        font-size: 25px;
+        font-size: 20px;
         color: var(--black-text-color);
       }
-
-
-      #secondary-nav a:hover {
-        color: var(--hover-color);
-        }
 
       body {
             margin: 0;
@@ -198,21 +203,20 @@
 
       .container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 10px 10px 10px;
+        flex-direction: row;
         margin: 0 auto;
+        width: 1440px;
       }
 
       .all-text {
         display: flex;
         flex-direction: row;
         margin: 0 auto;
-        font-size: 20px;
-        width: 45%;
+        font-size: 25px;
+        width: 100%;
         color: var(--black-text-color);
-        font-size: 30px;
-        padding: 40px;
+        padding-left: 30px;
+        padding-top: -20px;
         margin: 0 auto;
       }
      
@@ -220,6 +224,7 @@
         display: flex;
         justify-content: center;
         margin: 0 auto;
+        padding-top:70px;
         width: 100%;
         }
 
@@ -249,24 +254,24 @@
 
         footer {
         color: var(--black-text-color); 
-        width: 50%;
+        width: 100%;
         margin: 0 auto;
         text-align: center;
         align-items: center;
-        margin-top: 50px; 
+        padding-top: 40px; 
         display: flex;
         flex-direction: row;
+        width:1440px;
       }
 
       .footer-left {
         flex:1;
         text-align: left;
-        padding: 5px 20px 0 10px;
+        padding-left: 10px;
       }
 
       .footer-center {
         flex:1;
-        padding:10px;
       }
 
       .footer-right {
@@ -326,7 +331,6 @@
             display:flex;
             font-size: 12px;
             flex-direction: row;
-            z-index: 1;
             max-width: 50%;
           }
 
@@ -397,27 +401,36 @@
        <nav id="primary-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li class="dropdown">
-            <button id="steps-btn">Steps ▼</button>
-            <nav id="secondary-nav">
-                <ul>
-                    <li><a href="step-1.html">1. Slag Finding</a></li>
-                    <li><a href="step-2.html">2. Slag Cutting</a></li>
-                    <li><a href="step-3.html">3. Slag Shaping</a></li>
-                    <li><a href="step-4.html">4. Silver Designing</a></li>
-                    <li><a href="step-5.html">5. Silver Soldering</a></li>
-                    <li><a href="step-6.html">6. Piece Finishing</a></li>
-                </ul>
-            </nav>
-          </li>
+          <li><a href="step-1.html">Steps</a></li>
           <li><a href="history.html">History</a></li>
         </ul>
        </nav>
       </div> 
 
+      <div class="connector-line"></div> 
+
+      <div class="nav-steps">
+       <nav id="secondary-nav">
+        <ul>
+          <li><a href="step-1.html">1. Slag Finding</a></li>
+          <li><a href="step-2.html">2. Slag Cutting</a></li>
+          <li><a href="step-3.html">3. Slag Shaping</a></li>
+          <li><a href="step-4.html">4. Silver Designing</a></li>
+          <li><a href="step-5.html">5. Silver Soldering</a></li>
+          <li><a href="step-6.html">6. Piece Finishing</a></li>
+        </ul>
+       </nav>
+      </div> 
+     
+      </div>
+
+      <main>
+
       <div> <h2>Stept 1 of 6: Finding Iron Slag</h2>
         </div>
       
+      <div class="container">
+
       <div class="image">
         <figure>
           <img src="images/finding-2.webp" alt="2" >
@@ -428,12 +441,6 @@
           <figcaption>Finding Slag</figcaption>
         </figure>
       </div>
-
-     </div>
-
-    <main>
-
-      <div class="container">
 
       <div class="all-text">
 
@@ -454,19 +461,19 @@
     
       </div>
 
+      </div>
+
         <div class="progression-buttons">
          <nav>
           <a href="step-2.html">Next Step</a>
        </nav>
       </div> 
 
-      </main>
-
       <footer>
 
         <div class="footer-left">
           <div> <a href="mailto: info@cpt.com"> 
-            Contact: info@cpt.com
+            info@slagpendants.com
             </a>
           </div>
         </div>
@@ -478,16 +485,17 @@
         <div class="footer-right">
           <div class="sm-icons">
             <a href="https://www.facebook.com "> 
-              <img src="images/fb-bw.webp" alt="FB" width="40" height="40">
+              <img src="images/fb-bw.webp" alt="FB" width="60">
             </a>
             <a href="https://www.instagram.com "> 
-              <img src="images/ig-bw.webp" alt="IG" width="40" height="40">
+              <img src="images/ig-bw.webp" alt="IG" width="55">
             </a>
           </div>
         </div>
 
       </footer>
-
+      
+     </main>
             <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
 
      <script>
