@@ -66,8 +66,7 @@
         font-family:var(--font-family);
         color: var(--header-color);
         margin: 0 auto;
-        padding: 70px 0 40px 0;
-        text-align: center;
+        padding: 30px;
       }
 
       #primary-nav { 
@@ -125,7 +124,15 @@
         }  
         
         #toggle-nav-btn {
-        display: none; /* hide for desktop, above 767px */
+        display: none; /* hide by default (desktop) */
+        }
+
+      .steps-img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1440px;
+        margin: 0 auto;
         }
 
         .nav-steps {
@@ -133,15 +140,13 @@
         margin: 0 auto;
         width: 100%;
         display: flex;
-        width: 1440px;
-        align-items: center;
         }
        
        .image {
           display: flex;
           flex-direction: row;
           justify-content: center;
-          gap: 10px;
+          gap: 70px;
           margin:0 auto;
         }
 
@@ -153,8 +158,9 @@
         }
 
         .image figcaption {
-        font-size: 25px;
+        font-size: 20px;
         color: var(--black-text-color);
+        margin-top: 10px;
         font-family: var(--font-family);
         }
 
@@ -203,7 +209,9 @@
 
       .container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px 10px 10px;
         margin: 0 auto;
         width: 1440px;
       }
@@ -212,11 +220,11 @@
         display: flex;
         flex-direction: row;
         margin: 0 auto;
-        font-size: 25px;
+        font-size: 20px;
         width: 100%;
         color: var(--black-text-color);
-        padding-left: 30px;
-        padding-top: -20px;
+        font-size: 30px;
+        padding: 30px;
         margin: 0 auto;
       }
      
@@ -224,7 +232,6 @@
         display: flex;
         justify-content: center;
         margin: 0 auto;
-        padding-top:70px;
         width: 100%;
         }
 
@@ -258,10 +265,9 @@
         margin: 0 auto;
         text-align: center;
         align-items: center;
-        padding-top: 40px; 
+        margin-top: 30px; 
         display: flex;
         flex-direction: row;
-        width:1440px;
       }
 
       .footer-left {
@@ -331,6 +337,7 @@
             display:flex;
             font-size: 12px;
             flex-direction: row;
+            z-index: 1;
             max-width: 50%;
           }
 
@@ -409,6 +416,8 @@
 
       <div class="connector-line"></div> 
 
+      <div class="steps-img-container">
+
       <div class="nav-steps">
        <nav id="secondary-nav">
         <ul>
@@ -421,16 +430,10 @@
         </ul>
        </nav>
       </div> 
-     
-      </div>
 
-      <main>
-
-      <div> <h2>Step 1 of 6: Finding Iron Slag</h2>
+      <div> <h2>Stept 1 of 6: Finding Iron Slag</h2>
         </div>
       
-      <div class="container">
-
       <div class="image">
         <figure>
           <img src="images/finding-2.webp" alt="2" >
@@ -441,6 +444,12 @@
           <figcaption>Finding Slag</figcaption>
         </figure>
       </div>
+
+     </div>
+
+    <main>
+
+      <div class="container">
 
       <div class="all-text">
 
@@ -459,8 +468,6 @@
             </li>
           </ol>
     
-      </div>
-
       </div>
 
         <div class="progression-buttons">
@@ -494,7 +501,7 @@
         </div>
 
       </footer>
-      
+      </div>
      </main>
             <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
 
