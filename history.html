@@ -131,7 +131,7 @@
         .nav-steps {
         justify-content: center;
         margin: 0 auto;
-        width: 100%;
+        box-sizing: border-box;
         display: flex;
         width: 1440px;
         align-items: center;
@@ -157,13 +157,6 @@
         color: var(--black-text-color);
         font-family: var(--font-family);
         text-align: center;
-        }
-
-        .nav-steps,
-        .image {
-          width: 100%;
-          display: flex;
-          justify-content: center;
         }
         
       #secondary-nav { 
@@ -216,6 +209,8 @@
         width: 100%;
         color: var(--black-text-color);
         margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 100px 0 100px;
       }
 
         footer {
