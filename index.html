@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instructional Site</title> 
 
-   <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+   <link rel="icon" type="images/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="images/svg+xml" href="/images/favicon/favicon.svg" />
 <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="/images/favicon/site.webmanifest" />
@@ -24,7 +24,6 @@
         margin:0;
         padding:0;
         overflow-x: hidden;
-        overflow-y: scroll; /* I'm adding this to prevent hte slight shift to the left of header and bar when scrolling is necessary*/
       } 
 
       body {
@@ -45,7 +44,7 @@
       }
 
       header {
-        width: 100%;
+        width: calc(100%-40px);
         text-align: center;
         margin: 0 auto;
         padding: 30px 20px 5px 20px;
@@ -364,7 +363,7 @@
       </div> 
 
       <div class="hero">
-        <img src="images/hero.webp" alt="Finishing 1", width="1440">
+        <img src="images/hero.webp" alt="Finishing 1" width="1440">
       </div>
 
       </div>
