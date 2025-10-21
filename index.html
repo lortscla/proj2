@@ -269,8 +269,12 @@
 
         @media screen and (max-width: 767px) {
            
-        h1 a {
-            font-size: 20px;
+            h1 a {
+            font-size: 18px;
+          }
+
+          header {
+            padding: 0;
           }
 
           #primary-nav a {
@@ -307,6 +311,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-top:0;
           }
 
          .connector-line {
@@ -316,6 +321,11 @@
          .steps-img-container{
           width: 90%;
          }
+
+          #primary-nav a{
+            font-size: 13px;
+            color: var(--black-text-color);
+          }
 
          #primary-nav li:nth-child(2) a {
           text-decoration:none;
@@ -327,6 +337,7 @@
             color: var(--header-color);
             line-height: 1;
             justify-content: center;
+            color: var(--black-text-color);
           }
 
           #secondary-nav {
@@ -446,6 +457,7 @@
             text-align: left;
             padding-left: 5px;
             min-width: 0; 
+            font-size: 6px;
           }
 
           .footer-center {
@@ -457,7 +469,7 @@
 
           .footer-center p {
             margin: 0;
-            font-size: 9px;
+            font-size: 6px;
           }
 
           .footer-right {
@@ -475,16 +487,15 @@
 
           .sm-icons img {
             display: flex;
-            gap: 5px;
           }
 
           .sm-icons img {
-            width: 35px; 
+            width: 25px; 
             height: auto;
           }
 
           .sm-icons a:first-child img {
-            width: 40px; /*for some reason fb is smaller than ig ...*/
+            width: 30px; /*for some reason fb is smaller than ig ...*/
           }
         }
                 /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
