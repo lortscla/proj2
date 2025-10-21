@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 1: Finding Slag</title>
+    <title>Step 1: Finding Slag. Making Historic PA Iron Slag Pendants</title>
 
      <link href="hamburgers.css" rel="stylesheet">   
 
-   <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+   <link rel="icon" type="images/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="images/svg+xml" href="/images/favicon/favicon.svg" />
 <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="/images/favicon/site.webmanifest" />
@@ -26,7 +26,6 @@
         margin:0;
         padding:0;
         overflow-x: hidden;
-        overflow-y: scroll; /* I'm adding this to prevent hte slight shift to the left of header and bar when scrolling is necessary*/
        }                       
 
       body {
@@ -47,18 +46,19 @@
       }
 
       header {
-        width: 100%;
+        width: calc(100%-40px);
         text-align: center;
         margin: 0 auto;
-        padding: 30px 20px 5px 20px;
+        padding: 30px 20px 0 20px;
       }
 
-      header h1 {
+      header a {
         font-size: 60px;
         font-family: var(--font-family);
         color: var(--header-color);
         margin:0;
         letter-spacing: 0.5px;
+        text-decoration: none;
       }
 
         h2 {
@@ -66,7 +66,8 @@
         font-family:var(--font-family);
         color: var(--header-color);
         margin: 0 auto;
-        padding: 30px;
+        padding: 70px 0 40px 0;
+        text-align: center;
       }
 
       #primary-nav { 
@@ -124,29 +125,27 @@
         }  
         
         #toggle-nav-btn {
-        display: none; /* hide by default (desktop) */
+        display: none; 
         }
 
-      .steps-img-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 1440px;
-        margin: 0 auto;
-        }
+        #mobile-secondary-nav {
+        display: none;
+       }
 
         .nav-steps {
         justify-content: center;
         margin: 0 auto;
-        width: 100%;
+        box-sizing: border-box;
         display: flex;
+        width: 1440px;
+        align-items: center;
         }
        
        .image {
           display: flex;
           flex-direction: row;
           justify-content: center;
-          gap: 70px;
+          gap: 10px;
           margin:0 auto;
         }
 
@@ -158,17 +157,10 @@
         }
 
         .image figcaption {
-        font-size: 20px;
+        font-size: 25px;
         color: var(--black-text-color);
-        margin-top: 10px;
         font-family: var(--font-family);
-        }
-
-        .nav-steps,
-        .image {
-          width: 100%;
-          display: flex;
-          justify-content: center;
+        padding-top: 15px;
         }
         
       #secondary-nav { 
@@ -187,7 +179,7 @@
         text-align: center;
       }
 
-      #secondary-nav ul {
+      #secondary-nav ol {
         list-style: none; 
         padding: 0;
         margin: 0 auto;
@@ -203,36 +195,59 @@
         color: var(--black-text-color);
       }
 
+      .steps-item{
+        display:none;
+      }
+
       body {
             margin: 0;
         }
 
       .container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 10px 10px 10px;
+        flex-direction: row;
         margin: 0 auto;
-        width: 1440px;
+        max-width: 1440px;
+        width:100%;
+      }
+
+      .all-text-and-buttons {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: 100%;
       }
 
       .all-text {
         display: flex;
-        flex-direction: row;
         margin: 0 auto;
-        font-size: 20px;
+        font-size: 25px;
         width: 100%;
         color: var(--black-text-color);
-        font-size: 30px;
-        padding: 30px;
+        padding-left: 30px;
+        padding-top: -20px;
         margin: 0 auto;
+        box-sizing: border-box;
       }
-     
+
+       .all-text ol {
+        list-style-type:lower-alpha;
+        list-style-position: outside;
+      }
+
+      .all-text ol li {
+       margin-bottom: 2rem;  
+        }
+
       .progression-buttons {
         display: flex;
-        justify-content: center;
-        margin: 0 auto;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: 20px auto 20px auto;
+        padding-left:65px;
         width: 100%;
+        box-sizing: border-box;
         }
 
         .progression-buttons nav {
@@ -265,9 +280,10 @@
         margin: 0 auto;
         text-align: center;
         align-items: center;
-        margin-top: 30px; 
+        padding-top: 40px; 
         display: flex;
         flex-direction: row;
+        width:1440px;
       }
 
       .footer-left {
@@ -276,6 +292,16 @@
         padding-left: 10px;
       }
 
+       .footer-left {
+        flex:1;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+       .footer-left a {
+        color: var(--black-text-color);
+      } 
+      
       .footer-center {
         flex:1;
       }
@@ -306,24 +332,153 @@
 
         @media screen and (max-width: 767px) {
            
-          h1 {
-            font-size: 30px;
+          h1 a {
+            font-size: 20px;
+          }
+
+          #primary-nav a {
+            font-size: 18px;
+          }
+
+          #primary-nav ul {
+               gap: 90px;
+          }
+
+          h2 {
+            font-size: 20px;
+            padding: 20px;
+          }
+
+            #primary-nav ul {
+           flex-direction: row;
+           gap: 30px;
+           border-top: 1px solid #ccc;
+           margin-top: 10px;
+           padding: 10px 0;
+           }
+
+           #primary-nav.show {
+            display: block;
+           }
+
+          #primary-nav {
+            font-size: 15px;
+          }
+
+          .nav-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+         .connector-line {
+           display: none;
+         }
+
+         #primary-nav li:nth-child(2) a {
+          text-decoration:none;
+         }
+
+         .chevron-arrow {
+            display: flex;
+            font-size: 15px;
+            color: var(--header-color);
+            line-height: 1;
+            justify-content: center;
+          }
+
+          #secondary-nav {
+            display: none;
+          }
+
+           #toggle-nav-btn {
+            display: inline-block;
+            background: none;
+            border: none;
+            cursor:pointer;
+            vertical-align:middle;
+            transform: scale(0.7);
+            padding: 5px;
+          }
+
+          #mobile-secondary-nav {
+             display: none;
+            flex-direction: column;
+            background: white;
+            border: 1px solid #000;
+            width: 180px;
+            margin-top: 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 100%; /* directly below Steps link */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+          }
+
+          #mobile-secondary-nav.show {
+            display: flex;
+          }
+
+          #mobile-secondary-nav a {
+            text-align: center;
+            color: var(--header-color);
+            font-size: 18px;
+            padding: 8px;
+            text-decoration: none;
+          }
+
+          #mobile-secondary-nav a:hover {
+            color: var(--hover-color);
+          }
+
+          .steps-item {
+            position: relative; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            margin-left: -6px;
+          }
+
+          #mobile-secondary-nav.show {
+            display: flex;
+          }
+
+          #mobile-secondary-nav a {
+            text-decoration: none;
+            color: var(--header-color);
+            font-size: 18px;
+            text-align: center;
+            padding: 8px;
           }
 
           .all-text {
             flex-direction: column;
             font-size: 12px;
             margin: 0 auto;
+            width: 75%;
+            padding: 5px 0 0 10px;
+          }
+
+          .all-text ol {
+            padding:0
+          }
+
+          .all-text-and-buttons {
+            order: 2;
+            margin:0 auto;
             width: 90%;
+          }
+
+          .progression-buttons {
+            padding:0;
+
           }
 
           .container {
             flex-direction: column;
           } 
-
-          .text-column {
-            flex-direction: column;
-          }
 
           .image img { 
             width: 80%;
@@ -335,55 +490,79 @@
           .image {
             order: 1;
             display:flex;
-            font-size: 12px;
             flex-direction: row;
-            z-index: 1;
             max-width: 50%;
           }
 
-          .all-text {
-            order: 2;
+          .image figcaption {
+            font-size: 8px;
           }
 
-          #toggle-nav-btn {
-            display: block;
-            margin-left:auto;
+          .progression-buttons {
+            order:3;
+            width: 80%;
           }
 
-          #primary-nav {
-            display: none;
-            position: static;
-            background: white;
+          .progression-buttons a {
+            font-size: 12px;
+            padding: 10px;
           }
 
-          #primary-nav.show {
-            display: block;
-          }
-
-          #primary-nav ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px 0;
+          footer {
+            width: 100%;
+            font-size: 9px;
             margin: 0;
-            gap: 0;
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping */
+            align-items: center;
+            gap: 5px;
           }
 
-          #primary-nav li {
-            padding: 10px 0;
+          .footer-left {
+            flex: 1;
+            text-align: left;
+            padding-left: 5px;
+            min-width: 0; /* Allow text to shrink */
+          }
+
+          .footer-center {
+            flex: 1;
             text-align: center;
+            white-space: nowrap; 
+            min-width: 0;
           }
 
-          #primary-nav a {
-            text-decoration: none;
-            font-size: 20px;
+          .footer-center p {
+            margin: 0;
+            font-size: 9px;
           }
 
-          #primary-nav a:hover, 
-          #primary-nav a:active {
-            border-radius: 5px;
+          .footer-right {
+            flex: 1;
+            text-align: right;
+            padding-right: 5px;
+            }
+
+          .sm-icons {
+            padding: 10px 5px 10px 0;
+            display:flex;
+            gap:0px;
+            justify-content: flex-end;
           }
 
+          .sm-icons img {
+            display: flex;
+            gap: 5px;
+          }
+
+          .sm-icons img {
+            width: 35px; 
+            height: auto;
+          }
+
+          .sm-icons a:first-child img {
+            width: 40px; /*for some reason fb is smaller than ig ...*/
+          }
         }
                 /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
     </style> 
@@ -394,46 +573,59 @@
     <div id="top-bar">
        
          <header>
-      <h1>Making Historic PA Iron Slag Pendants</h1>
+      <h1><a href="index.html">Making Historic PA Iron Slag Pendants</a></h1>
       </header>
-
-        <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
-          <span class="hamburger-box">
-          <span class="hamburger-inner">
-          </span>
-         </span>
-        </button>
       
       <div class="nav-menu">
        <nav id="primary-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="step-1.html">Steps</a></li>
+            <li><a href="step-1.html">Steps</a></li>    
           <li><a href="history.html">History</a></li>
         </ul>
+
+        <div class="steps-item">
+            <span class="chevron-arrow">▼</span>
+              <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+              </button>
+              <nav id="mobile-secondary-nav">
+                <a href="step-1.html">1. Finding Slag</a>
+                <a href="step-2.html">2. Cutting Slag</a>
+                <a href="step-3.html">3. Shaping Slag</a>
+                <a href="step-4.html">4. Silver Designing</a>
+                <a href="step-5.html">5. Silver Soldering</a>
+                <a href="step-6.html">6. Piece Finishing</a>
+              </nav>
+            </div>
+
        </nav>
       </div> 
 
       <div class="connector-line"></div> 
 
-      <div class="steps-img-container">
-
       <div class="nav-steps">
        <nav id="secondary-nav">
-        <ul>
-          <li><a href="step-1.html">1. Slag Finding</a></li>
-          <li><a href="step-2.html">2. Slag Cutting</a></li>
-          <li><a href="step-3.html">3. Slag Shaping</a></li>
-          <li><a href="step-4.html">4. Silver Designing</a></li>
-          <li><a href="step-5.html">5. Silver Soldering</a></li>
-          <li><a href="step-6.html">6. Piece Finishing</a></li>
-        </ul>
+        <ol>
+              <a href="step-1.html">1. Finding Slag</a>
+              <a href="step-2.html">2. Cutting Slag</a>
+              <a href="step-3.html">3. Shaping Slag</a>
+              <a href="step-4.html">4. Silver Designing</a>
+              <a href="step-5.html">5. Silver Soldering</a>
+              <a href="step-6.html">6. Piece Finishing</a>
+          </ol>
        </nav>
-      </div> 
+      </div>   
 
-      <div> <h2>Stept 1 of 6: Finding Iron Slag</h2>
+      </div>
+
+      <main>
+
+      <div> <h2>Step 1 of 6: Finding Iron Slag</h2>
         </div>
       
+      <div class="container">
+
       <div class="image">
         <figure>
           <img src="images/finding-2.webp" alt="2" >
@@ -445,11 +637,7 @@
         </figure>
       </div>
 
-     </div>
-
-    <main>
-
-      <div class="container">
+      <div class="all-text-and-buttons">
 
       <div class="all-text">
 
@@ -457,13 +645,13 @@
             <li>
                 The first step in creating slag jewelry is hunting for it! Slag was created and is found surrounding the 19th century cold blast iron furnaces, and hunting for the perfect piece is often an adventure. 
             </li>
-            <br><li>
+           <li>
                 Slag was heavy, so workers often dumped it in nearby pits and streams. These are the locations where most slag is found.
             </li>
-            <br><li>
+            <li>
                 The best pieces of slag for jewelry have high density (more like glass, with no pores or holes) and are blue with variations in blues and whites. 
             </li>
-            <br><li>
+           <li>
                 Make sure to obtain permission from the curator or land owner prior to taking slag from the historic iron furnace.
             </li>
           </ol>
@@ -472,14 +660,18 @@
 
         <div class="progression-buttons">
          <nav>
-          <a href="step-2.html">Next Step</a>
+          <a href="step-2.html">Next Step <strong>—></strong></a>
        </nav>
+       </div>
+
       </div> 
+
+      </div>
 
       <footer>
 
         <div class="footer-left">
-          <div> <a href="mailto: info@cpt.com"> 
+          <div> <a href="mailto: info@slagpendants.com"> 
             info@slagpendants.com
             </a>
           </div>
@@ -501,35 +693,30 @@
         </div>
 
       </footer>
-      </div>
+      
      </main>
             <!--HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH-->
 
      <script>
 
-     window.onload = () => {
-  // Hamburger menu toggle
-  const toggleNavBtn = document.getElementById('toggle-nav-btn');
-  const primaryNav = document.getElementById('primary-nav');
-  toggleNavBtn.addEventListener('click', () => {
-    primaryNav.classList.toggle('show');
-    toggleNavBtn.classList.toggle('is-active');
+window.onload = () => {
+  const toggleNavBtn = document.getElementById("toggle-nav-btn");
+  const mobileSteps = document.getElementById("mobile-secondary-nav");
+
+  toggleNavBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileSteps.classList.toggle("show");
+    toggleNavBtn.classList.toggle("is-active");
   });
 
-  // Steps dropdown toggle
-  const stepsBtn = document.getElementById('steps-btn');
-  const secondaryNav = document.getElementById('secondary-nav');
-  stepsBtn.addEventListener('click', () => {
-    secondaryNav.classList.toggle('show');
-  });
-
-  // Optional: close dropdown if clicking outside
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('.dropdown')) {
-      secondaryNav.classList.remove('show');
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".steps-item")) {
+      mobileSteps.classList.remove("show");
+      toggleNavBtn.classList.remove("is-active");
     }
   });
 };
+
     </script>
 
 </body>

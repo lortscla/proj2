@@ -269,31 +269,172 @@
         justify-content: flex-end;
       }
 
+      .steps-item {
+        display: none;
+      }
+
+      .chevron-arrow {
+        display: none;
+      }
+
+      #mobile-secondary-nav {
+        display: none;
+      }
+
                /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
 
         @media screen and (max-width: 767px) {
            
-          h1 {
-            font-size: 30px;
+           h1 a {
+            font-size: 20px;
+          }
+
+          #primary-nav a {
+            font-size: 18px;
+          }
+
+          #primary-nav ul {
+               gap: 90px;
+          }
+
+          h2 {
+            font-size: 20px;
+            padding: 20px;
+          }
+
+            #primary-nav ul {
+           flex-direction: row;
+           gap: 30px;
+           border-top: 1px solid #ccc;
+           margin-top: 10px;
+           padding: 10px 0;
+           }
+
+           #primary-nav.show {
+            display: block;
+           }
+
+          #primary-nav {
+            font-size: 15px;
+          }
+
+          .nav-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+         .connector-line {
+           display: none;
+         }
+
+         #primary-nav li:nth-child(2) a {
+          text-decoration:none;
+         }
+
+         .chevron-arrow {
+            display: flex;
+            font-size: 15px;
+            color: var(--header-color);
+            line-height: 1;
+            justify-content: center;
+          }
+
+          #secondary-nav {
+            display: none;
+          }
+
+           #toggle-nav-btn {
+            display: inline-block;
+            background: none;
+            border: none;
+            cursor:pointer;
+            vertical-align:middle;
+            transform: scale(0.7);
+            padding: 5px;
+          }
+
+          #mobile-secondary-nav {
+             display: none;
+            flex-direction: column;
+            background: white;
+            border: 1px solid #000;
+            width: 180px;
+            margin-top: 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 100%; /* directly below Steps link */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+          }
+
+          #mobile-secondary-nav.show {
+            display: flex;
+          }
+
+          #mobile-secondary-nav a {
+            text-align: center;
+            color: var(--header-color);
+            font-size: 18px;
+            padding: 8px;
+            text-decoration: none;
+          }
+
+          #mobile-secondary-nav a:hover {
+            color: var(--hover-color);
+          }
+
+          .steps-item {
+            position: relative; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            margin-left: -6px;
+          }
+
+          #mobile-secondary-nav.show {
+            display: flex;
+          }
+
+          #mobile-secondary-nav a {
+            text-decoration: none;
+            color: var(--header-color);
+            font-size: 18px;
+            text-align: center;
+            padding: 8px;
           }
 
           .all-text {
             flex-direction: column;
             font-size: 12px;
             margin: 0 auto;
+            width: 75%;
+            padding: 5px 0 0 10px;
+          }
+
+          .all-text ol {
+            padding:0
+          }
+
+          .all-text-and-buttons {
+            order: 2;
+            margin:0 auto;
             width: 90%;
+          }
+
+          .progression-buttons {
+            padding:0;
+
           }
 
           .container {
             flex-direction: column;
           } 
 
-          .text-column {
-            flex-direction: column;
-          }
-
           .image img { 
-            width: 80%;
+            width: 90%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -302,54 +443,80 @@
           .image {
             order: 1;
             display:flex;
-            font-size: 12px;
             flex-direction: row;
-            max-width: 50%;
+            max-width: 70%;
+            margin: 0 auto;
           }
 
-          .all-text {
-            order: 2;
+          .image figcaption {
+            font-size: 8px;
           }
 
-          #toggle-nav-btn {
-            display: block;
-            margin-left:auto;
+          .progression-buttons {
+            order:3;
+            width: 80%;
           }
 
-          #primary-nav {
-            display: none;
-            position: static;
-            background: white;
+          .progression-buttons a {
+            font-size: 12px;
+            padding: 10px;
           }
 
-          #primary-nav.show {
-            display: block;
-          }
-
-          #primary-nav ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px 0;
+          footer {
+            width: 100%;
+            font-size: 9px;
             margin: 0;
-            gap: 0;
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping */
+            align-items: center;
+            gap: 5px;
           }
 
-          #primary-nav li {
-            padding: 10px 0;
+          .footer-left {
+            flex: 1;
+            text-align: left;
+            padding-left: 5px;
+            min-width: 0; /* Allow text to shrink */
+          }
+
+          .footer-center {
+            flex: 1;
             text-align: center;
+            white-space: nowrap; 
+            min-width: 0;
           }
 
-          #primary-nav a {
-            text-decoration: none;
-            font-size: 20px;
+          .footer-center p {
+            margin: 0;
+            font-size: 9px;
           }
 
-          #primary-nav a:hover, 
-          #primary-nav a:active {
-            border-radius: 5px;
+          .footer-right {
+            flex: 1;
+            text-align: right;
+            padding-right: 5px;
+            }
+
+          .sm-icons {
+            padding: 10px 5px 10px 0;
+            display:flex;
+            gap:0px;
+            justify-content: flex-end;
           }
 
+          .sm-icons img {
+            display: flex;
+            gap: 5px;
+          }
+
+          .sm-icons img {
+            width: 35px; 
+            height: auto;
+          }
+
+          .sm-icons a:first-child img {
+            width: 40px; /*for some reason fb is smaller than ig ...*/
+          }
         }
                 /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
     </style> 
@@ -362,21 +529,30 @@
          <header>
       <h1><a href="index.html">Making Historic PA Iron Slag Pendants</a></h1>
       </header>
-
-        <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
-          <span class="hamburger-box">
-          <span class="hamburger-inner">
-          </span>
-         </span>
-        </button>
       
-      <div class="nav-menu">
+         <div class="nav-menu">
        <nav id="primary-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="step-1.html">Steps</a></li>
+            <li><a href="step-1.html">Steps</a></li>    
           <li><a href="history.html">History</a></li>
         </ul>
+
+        <div class="steps-item">
+            <span class="chevron-arrow">▼</span>
+              <button id="toggle-nav-btn" class="hamburger hamburger--elastic" type="button">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+              </button>
+              <nav id="mobile-secondary-nav">
+                <a href="step-1.html">1. Finding Slag</a>
+                <a href="step-2.html">2. Cutting Slag</a>
+                <a href="step-3.html">3. Shaping Slag</a>
+                <a href="step-4.html">4. Silver Designing</a>
+                <a href="step-5.html">5. Silver Soldering</a>
+                <a href="step-6.html">6. Piece Finishing</a>
+              </nav>
+            </div>
+
        </nav>
       </div> 
 
@@ -459,26 +635,20 @@
 
      <script>
 
-     window.onload = () => {
-  // Hamburger menu toggle
-  const toggleNavBtn = document.getElementById('toggle-nav-btn');
-  const primaryNav = document.getElementById('primary-nav');
-  toggleNavBtn.addEventListener('click', () => {
-    primaryNav.classList.toggle('show');
-    toggleNavBtn.classList.toggle('is-active');
+    window.onload = () => {
+  const toggleNavBtn = document.getElementById("toggle-nav-btn");
+  const mobileSteps = document.getElementById("mobile-secondary-nav");
+
+  toggleNavBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileSteps.classList.toggle("show");
+    toggleNavBtn.classList.toggle("is-active");
   });
 
-  // Steps dropdown toggle
-  const stepsBtn = document.getElementById('steps-btn');
-  const secondaryNav = document.getElementById('secondary-nav');
-  stepsBtn.addEventListener('click', () => {
-    secondaryNav.classList.toggle('show');
-  });
-
-  // Optional: close dropdown if clicking outside
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('.dropdown')) {
-      secondaryNav.classList.remove('show');
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".steps-item")) {
+      mobileSteps.classList.remove("show");
+      toggleNavBtn.classList.remove("is-active");
     }
   });
 };
