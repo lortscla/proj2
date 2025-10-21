@@ -408,34 +408,36 @@
             padding: 5px;
           }
 
-          #mobile-secondary-nav {
+         #mobile-secondary-nav {
              display: none;
             flex-direction: column;
             background: white;
             border: 1px solid #000;
-            width: 180px;
-            margin-top: 10px;
+            width: 135px;
+            margin: 0;
             border-radius: 5px;
             position: absolute;
-            top: 100%; /* directly below Steps link */
+            top: 100%; /* directly below Steps */
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
+            padding: 9px 0 9px 0;
           }
 
           #mobile-secondary-nav.show {
             display: flex;
           }
 
-          #mobile-secondary-nav a {
+          #mobile-secondary-nav.show a {
             text-align: center;
-            color: var(--header-color);
-            font-size: 18px;
-            padding: 8px;
+            color: var(--black-text-color);
+            font-size: 12px;
+            padding: 5;
+            padding-bottom: 8px;
             text-decoration: none;
           }
 
-          #mobile-secondary-nav a:hover {
+          #mobile-secondary-nav.show a:hover {
             color: var(--hover-color);
           }
 
